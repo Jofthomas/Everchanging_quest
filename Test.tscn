@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b776mtu6o7lng"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_c5hfg"]
+[ext_resource type="TileSet" uid="uid://d4mhr8yor5vlr" path="res://src/tilsets/dungeon2.tres" id="1_x38m2"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_c5hfg")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_x38m2")
+format = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

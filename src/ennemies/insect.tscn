@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://38q3n1y65ne6"]
+
+[ext_resource type="PackedScene" uid="uid://0s5idk72xmfh" path="res://src/ennemies/ennemy_handler.tscn" id="1_qrtfm"]
+[ext_resource type="Texture2D" uid="uid://dom837k128my2" path="res://assets/Monsters/StingFly/StingFly Back.png" id="2_vgfsf"]
+[ext_resource type="PackedScene" uid="uid://b21624kvdrg8e" path="res://src/combat/hitbox_component.tscn" id="3_heu60"]
+[ext_resource type="PackedScene" uid="uid://co7lhukrmy10j" path="res://src/ennemies/ennemy_animation.tscn" id="4_4dtwr"]
+[ext_resource type="PackedScene" uid="uid://cckil36lyyy5q" path="res://src/combat/health_component.tscn" id="4_y8cb0"]
+[ext_resource type="Texture2D" uid="uid://bdhlbb0w51wv1" path="res://assets/Monsters/StingFly/StingFly Front.png" id="5_u2l6t"]
+[ext_resource type="Texture2D" uid="uid://i3r5ehe37key" path="res://assets/Monsters/StingFly/StingFly Side.png" id="6_iu4ut"]
+[ext_resource type="PackedScene" uid="uid://6jnvg0qov65i" path="res://src/combat/damage_area_component.tscn" id="8_bbg88"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c66xe"]
+radius = 130.188
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1pi1"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5i0h"]
+
+[node name="Insect" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="EnnemyHandler" parent="." node_paths=PackedStringArray("anim", "shape", "hitbox", "damage_area") instance=ExtResource("1_qrtfm")]
+anim = NodePath("../EnnemyAnimation")
+shape = NodePath("../CollisionShape2D")
+hitbox = NodePath("../HitboxComponent")
+damage_area = NodePath("../DamageAreaComponent")
+ennemy_name = "insect"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnnemyHandler"]
+shape = SubResource("CircleShape2D_c66xe")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w1pi1")
+metadata/_edit_lock_ = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_y8cb0")]
+position = Vector2(0, -4)
+max_health = 5
+metadata/_edit_lock_ = true
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp", "effect_component", "body") instance=ExtResource("3_heu60")]
+health_comp = NodePath("../HealthComponent")
+effect_component = NodePath("../EnnemyHandler")
+body = NodePath("..")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_v5i0h")
+metadata/_edit_lock_ = true
+
+[node name="EnnemyAnimation" parent="." instance=ExtResource("4_4dtwr")]
+back_texture = ExtResource("2_vgfsf")
+side_texture = ExtResource("6_iu4ut")
+front_texture = ExtResource("5_u2l6t")
+
+[node name="DamageAreaComponent" parent="." instance=ExtResource("8_bbg88")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaComponent"]
+shape = SubResource("CircleShape2D_v5i0h")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="EnnemyHandler" to="EnnemyHandler" method="_on_body_entered"]
+[connection signal="body_exited" from="EnnemyHandler" to="EnnemyHandler" method="_on_body_exited"]
+[connection signal="die" from="HealthComponent" to="EnnemyHandler" method="_on_health_component_die"]
+[connection signal="hit" from="HealthComponent" to="EnnemyHandler" method="_on_health_component_hit"]
+[connection signal="end_death_animation" from="EnnemyAnimation" to="EnnemyHandler" method="_on_ennemy_animation_end_death_animation"]

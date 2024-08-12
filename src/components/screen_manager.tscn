@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfd4nhsn7rsg8"]
+
+[ext_resource type="Script" path="res://src/components/screen_manager.gd" id="1_xfc47"]
+
+[node name="ScreenManager" type="Node2D" groups=["screen_manager"]]
+script = ExtResource("1_xfc47")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

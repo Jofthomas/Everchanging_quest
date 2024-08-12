@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3r3xm8ek0xgq"]
+
+[ext_resource type="Script" path="res://src/player/stat.gd" id="1_jtpxa"]
+
+[node name="stat" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 88.0
+script = ExtResource("1_jtpxa")
+
+[node name="name" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 199.0
+offset_bottom = 48.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]magic[/color]"
+
+[node name="value" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 181.0
+offset_bottom = 80.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]1[/color]"
+
+[node name="Button" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 56.0
+text = "+"
+
+[node name="Button2" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 48.0
+offset_bottom = 56.0
+text = "-"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 40.0
+offset_right = 337.0
+offset_bottom = 98.0
+text = "max :
+cost :
+"
+
+[node name="max" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 67.0
+text = "200"
+
+[node name="cost" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 64.0
+offset_right = 346.0
+offset_bottom = 95.0
+text = "300"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_plus_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_minus_pressed"]

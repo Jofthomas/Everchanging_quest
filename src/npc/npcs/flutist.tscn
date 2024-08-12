@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbp0j64fbbwto"]
+
+[ext_resource type="Texture2D" uid="uid://dh7irojh8p8ds" path="res://assets/NPCs/other NPCs/Flutist/npcact1_18 (2).png" id="1_hsye6"]
+[ext_resource type="Texture2D" uid="uid://c6owl6076uduo" path="res://assets/NPCs/other NPCs/Flutist/npcact1_18 (1).png" id="2_vx57o"]
+[ext_resource type="Texture2D" uid="uid://3oxhnt3tqrpf" path="res://assets/NPCs/other NPCs/Flutist/npcact1_18 (3).png" id="3_g7j2r"]
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="4_7oybq"]
+[ext_resource type="Script" path="res://src/npc/non_interact_component.gd" id="5_f3hwq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hsye6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx57o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hsye6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g7j2r")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2p45"]
+radius = 54.0093
+
+[node name="alchimiste" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle_working"
+
+[node name="InteractComponent" parent="." instance=ExtResource("4_7oybq")]
+script = ExtResource("5_f3hwq")
+textBB = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_r2p45")

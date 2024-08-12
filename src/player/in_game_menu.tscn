@@ -1,0 +1,873 @@
+[gd_scene load_steps=73 format=3 uid="uid://dnv3u4ewbmlgb"]
+
+[ext_resource type="Script" path="res://src/player/in_game_menu.gd" id="1_wtwex"]
+[ext_resource type="Texture2D" uid="uid://di4dx18p4jyvh" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/2.png" id="2_oxbhs"]
+[ext_resource type="Texture2D" uid="uid://6ne2qmac25ft" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/3.png" id="3_rk67f"]
+[ext_resource type="Texture2D" uid="uid://bsv50l53jxxn8" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/4.png" id="4_bq7et"]
+[ext_resource type="Texture2D" uid="uid://d2bdvxwio72ps" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/5.png" id="5_hvhkd"]
+[ext_resource type="Texture2D" uid="uid://dujinox7h1umr" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/6.png" id="6_vfahe"]
+[ext_resource type="Texture2D" uid="uid://ccw1uv6s0crk0" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/7.png" id="7_5v6sp"]
+[ext_resource type="Texture2D" uid="uid://egm2m00ssq2g" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/1.png" id="8_1t4du"]
+[ext_resource type="Texture2D" uid="uid://bmsk1popjlt1" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/2.png" id="9_jpalm"]
+[ext_resource type="Texture2D" uid="uid://cxgsnqwlvofev" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/3.png" id="10_qmfii"]
+[ext_resource type="Texture2D" uid="uid://drv5bple645ns" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/4.png" id="11_uugwk"]
+[ext_resource type="Texture2D" uid="uid://c6gnd105no4na" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/5.png" id="12_5dkyr"]
+[ext_resource type="Texture2D" uid="uid://c14pl2xigbsqh" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/6.png" id="13_j3x0h"]
+[ext_resource type="Texture2D" uid="uid://cp1fhfo6v33m" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/7.png" id="14_78krv"]
+[ext_resource type="Texture2D" uid="uid://bq53fr3o85r8s" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/8.png" id="15_cnw1o"]
+[ext_resource type="Texture2D" uid="uid://dc3egygu4otht" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/9.png" id="16_nqh8e"]
+[ext_resource type="Texture2D" uid="uid://3yc2vokxk37j" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Disappear/10.png" id="17_pp10n"]
+[ext_resource type="Texture2D" uid="uid://dmilcihwcfyh4" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Close/2.png" id="18_0co1k"]
+[ext_resource type="Texture2D" uid="uid://b8yaykp33fplq" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Close/3.png" id="19_hitva"]
+[ext_resource type="Texture2D" uid="uid://bb5cnmntdoln5" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Close/4.png" id="20_sdlst"]
+[ext_resource type="Texture2D" uid="uid://38lh6dp0r7nn" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Close/5.png" id="21_150yp"]
+[ext_resource type="Texture2D" uid="uid://dyqmouf2m4nc1" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Tabs/1.png" id="22_xnvh0"]
+[ext_resource type="Texture2D" uid="uid://bdab05e5ncihl" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/1.png" id="23_2uhie"]
+[ext_resource type="Texture2D" uid="uid://ch87vkqbg5h2w" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/2.png" id="24_kdrpf"]
+[ext_resource type="Texture2D" uid="uid://b3hsv8oaq0u4h" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/3.png" id="25_fiql2"]
+[ext_resource type="Texture2D" uid="uid://b2er67euimllq" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/4.png" id="26_n30yw"]
+[ext_resource type="Texture2D" uid="uid://7sytf42s7j4a" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/5.png" id="27_u55u5"]
+[ext_resource type="Texture2D" uid="uid://e2m8d27lx465" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Open & Close/Simple Book/Open/6.png" id="28_j2wkn"]
+[ext_resource type="Texture2D" uid="uid://bvjq3vu0qqlgn" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/2.png" id="29_tay61"]
+[ext_resource type="Texture2D" uid="uid://dsonwddgtwo0a" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/3.png" id="30_lt6km"]
+[ext_resource type="Texture2D" uid="uid://dmo8vnqffe85w" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/4.png" id="31_ka8vd"]
+[ext_resource type="Texture2D" uid="uid://c32djfokmfffw" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/5.png" id="32_017yh"]
+[ext_resource type="Texture2D" uid="uid://kxbtbs35ocse" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/6.png" id="33_5qvgx"]
+[ext_resource type="Texture2D" uid="uid://ddvj1flayau1h" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/7.png" id="34_53pdh"]
+[ext_resource type="Texture2D" uid="uid://osge7a7vo23a" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/8.png" id="35_it5vq"]
+[ext_resource type="Texture2D" uid="uid://cxmlfdredw68l" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/9.png" id="36_vqtl4"]
+[ext_resource type="Texture2D" uid="uid://t2enguf35e2k" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Animated/Book Tabs/With icons/Appear/10.png" id="37_spyg8"]
+[ext_resource type="Texture2D" uid="uid://bvjf81bwwcndi" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/SpriteSheet/Book UI System/3.png" id="38_fyvjs"]
+[ext_resource type="Script" path="res://src/player/menu_quest.gd" id="39_5dbqi"]
+[ext_resource type="PackedScene" uid="uid://dy67tjwq2ndxl" path="res://src/player/menu_inventory.tscn" id="39_jgt8g"]
+[ext_resource type="Script" path="res://src/player/menu_stats.gd" id="39_o315u"]
+[ext_resource type="Texture2D" uid="uid://cjqqsgrh5a17w" path="res://assets/Untitled.png" id="40_djxal"]
+[ext_resource type="PackedScene" uid="uid://b3r3xm8ek0xgq" path="res://src/player/stat.tscn" id="41_l2kue"]
+[ext_resource type="Script" path="res://src/player/menu_logs.gd" id="41_pxya2"]
+[ext_resource type="Texture2D" uid="uid://cbjn2llkolp7n" path="res://assets/Menu_assets/Book/Book Resources/Decoration/39.png" id="42_a8mnd"]
+[ext_resource type="Script" path="res://src/player/menu_options.gd" id="43_3a16s"]
+[ext_resource type="Texture2D" uid="uid://ugom6qr4a3l8" path="res://assets/Menu_assets/Book/Book Resources/Decoration/37.png" id="43_i7kfa"]
+[ext_resource type="Texture2D" uid="uid://4dume01kpdkg" path="res://assets/Menu_assets/Book/Book Resources/Decoration/40.png" id="44_uj7ya"]
+[ext_resource type="Texture2D" uid="uid://c2pxcfv3mtqln" path="res://assets/Menu_assets/Map/Static/3.png" id="45_1woa6"]
+[ext_resource type="Texture2D" uid="uid://d4jfecyoo8ifq" path="res://assets/Player/Red Sprite 3/@Extra/Side Portrait Large.png" id="45_jxxit"]
+[ext_resource type="Texture2D" uid="uid://cf57g11iipdbp" path="res://assets/Menu_assets/Book/Book Resources/Decoration/29.png" id="46_k4um1"]
+[ext_resource type="Texture2D" uid="uid://bgf1ga1r482lh" path="res://assets/Menu_assets/Book/Book Resources/Decoration/61.png" id="49_1dxqf"]
+[ext_resource type="Texture2D" uid="uid://wn7fj31e3eun" path="res://assets/Menu_assets/Book/Book Resources/Decoration/25.png" id="51_x2r87"]
+[ext_resource type="Texture2D" uid="uid://b53lsnvqxjsxx" path="res://assets/Menu_assets/Book/Book Resources/Decoration/26.png" id="52_fu6e4"]
+[ext_resource type="Texture2D" uid="uid://c7bvt8gvyca05" path="res://assets/Menu_assets/Keyboard/Individual Keys/a.png" id="54_7jh62"]
+[ext_resource type="Texture2D" uid="uid://65hbvderhvld" path="res://assets/Menu_assets/Keyboard/Individual Keys/arrow_up.png" id="54_qjte2"]
+[ext_resource type="Texture2D" uid="uid://ig3oc6140h2j" path="res://assets/Menu_assets/Keyboard/Individual Keys/r.png" id="55_cd65l"]
+[ext_resource type="Texture2D" uid="uid://whoykycpb6um" path="res://assets/Menu_assets/Keyboard/Individual Keys/z.png" id="56_0nrqv"]
+[ext_resource type="Texture2D" uid="uid://cyu0seiy7jxmi" path="res://assets/Menu_assets/Keyboard/Individual Keys/tab_alt.png" id="57_smo5s"]
+[ext_resource type="Texture2D" uid="uid://jlor74ws1hft" path="res://assets/Menu_assets/Keyboard/Individual Keys/e.png" id="58_aarr3"]
+[ext_resource type="Texture2D" uid="uid://yfsa73eevxfh" path="res://assets/Menu_assets/Keyboard/Individual Keys/arrow_right.png" id="60_twowm"]
+[ext_resource type="Texture2D" uid="uid://mlsfpbhw65qt" path="res://assets/Menu_assets/Keyboard/Individual Keys/arrow_left.png" id="61_rxdby"]
+[ext_resource type="Texture2D" uid="uid://dxpi683iskkm7" path="res://assets/Menu_assets/Keyboard/Individual Keys/arrow_down.png" id="62_gr8je"]
+[ext_resource type="Texture2D" uid="uid://cieshefx8huy0" path="res://assets/Menu_assets/Keyboard/Individual Keys/m.png" id="63_vm7xi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghdhy"]
+atlas = ExtResource("2_oxbhs")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0msgi"]
+atlas = ExtResource("3_rk67f")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh6nb"]
+atlas = ExtResource("4_bq7et")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrovh"]
+atlas = ExtResource("5_hvhkd")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i06uc"]
+atlas = ExtResource("6_vfahe")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_400kb"]
+atlas = ExtResource("7_5v6sp")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqwbe"]
+atlas = ExtResource("22_xnvh0")
+region = Rect2(0, 0, 848, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpirc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghdhy")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0msgi")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh6nb")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrovh")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i06uc")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_400kb")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1t4du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jpalm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qmfii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uugwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5dkyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j3x0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_78krv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cnw1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nqh8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pp10n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0co1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hitva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sdlst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_150yp")
+}],
+"loop": false,
+"name": &"close_book",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqwbe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2uhie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kdrpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fiql2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_n30yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_u55u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j2wkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tay61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lt6km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ka8vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_017yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5qvgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_53pdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_it5vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vqtl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_spyg8")
+}],
+"loop": false,
+"name": &"open_book",
+"speed": 10.0
+}]
+
+[node name="InGameMenu" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_wtwex")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(586, 294)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_cpirc")
+animation = &"close_book"
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 592)
+texture = ExtResource("38_fyvjs")
+
+[node name="menu_items" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="menu_stats" type="Control" parent="menu_items"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1131.0
+offset_bottom = 650.0
+script = ExtResource("39_o315u")
+metadata/_edit_lock_ = true
+
+[node name="active_spells" type="NinePatchRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 381.0
+offset_right = 527.0
+offset_bottom = 509.0
+texture = ExtResource("40_djxal")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="spells" type="NinePatchRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 166.0
+offset_right = 533.0
+offset_bottom = 328.0
+texture = ExtResource("40_djxal")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="health" parent="menu_items/menu_stats" instance=ExtResource("41_l2kue")]
+z_index = 2
+offset_left = 605.0
+offset_top = 183.0
+offset_right = 925.0
+offset_bottom = 271.0
+focus_mode = 1
+max_level = 15
+base_level = 2
+
+[node name="magic" parent="menu_items/menu_stats" instance=ExtResource("41_l2kue")]
+z_index = 2
+offset_left = 605.0
+offset_top = 263.0
+offset_right = 925.0
+offset_bottom = 351.0
+stat_name = "magic"
+
+[node name="energy" parent="menu_items/menu_stats" instance=ExtResource("41_l2kue")]
+visible = false
+offset_left = 605.0
+offset_top = 343.0
+offset_right = 925.0
+offset_bottom = 431.0
+stat_name = "energy"
+
+[node name="strength" parent="menu_items/menu_stats" instance=ExtResource("41_l2kue")]
+offset_left = 606.0
+offset_top = 341.0
+offset_right = 926.0
+offset_bottom = 429.0
+stat_name = "strength"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 126.0
+offset_right = 501.0
+offset_bottom = 166.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]spells[/color][/center]"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 349.0
+offset_right = 501.0
+offset_bottom = 389.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]active_spells[/color][/center]"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 124.0
+offset_right = 895.0
+offset_bottom = 164.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]stats[/color][/center]"
+
+[node name="xp_value" type="RichTextLabel" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 513.0
+offset_right = 878.0
+offset_bottom = 562.0
+text = "444"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 512.0
+offset_right = 811.0
+offset_bottom = 549.0
+text = "points:"
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 461.0
+offset_right = 879.0
+offset_bottom = 676.0
+texture = ExtResource("42_a8mnd")
+
+[node name="TextureRect3" type="TextureRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 118.0
+offset_right = 284.0
+offset_bottom = 158.0
+
+[node name="TextureRect4" type="TextureRect" parent="menu_items/menu_stats"]
+z_index = 1
+layout_mode = 0
+offset_left = 613.0
+offset_top = 94.0
+offset_right = 871.0
+offset_bottom = 309.0
+scale = Vector2(0.631072, 0.635085)
+mouse_filter = 2
+texture = ExtResource("44_uj7ya")
+
+[node name="TextureRect5" type="TextureRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 106.0
+offset_right = 733.0
+offset_bottom = 217.0
+scale = Vector2(0.744267, 0.726086)
+texture = ExtResource("45_jxxit")
+
+[node name="TextureRect2" type="TextureRect" parent="menu_items/menu_stats"]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 97.0
+offset_right = 948.0
+offset_bottom = 312.0
+mouse_filter = 2
+texture = ExtResource("46_k4um1")
+
+[node name="menu_logs" type="Control" parent="menu_items"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1131.0
+offset_bottom = 650.0
+script = ExtResource("41_pxya2")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="menu_items/menu_logs"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 135.0
+offset_right = 504.0
+offset_bottom = 175.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]conversation logs[/color][/center]"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="menu_items/menu_logs"]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 133.0
+offset_right = 909.0
+offset_bottom = 173.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]map[/color][/center]"
+
+[node name="map_center" type="Node2D" parent="menu_items/menu_logs"]
+position = Vector2(769, 304)
+
+[node name="no_map_indicator" type="RichTextLabel" parent="menu_items/menu_logs"]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 483.0
+offset_right = 919.0
+offset_bottom = 523.0
+bbcode_enabled = true
+text = "[color=black]enter dungeon to see the map[/color]"
+
+[node name="Sprite2D" type="Sprite2D" parent="menu_items/menu_logs"]
+
+[node name="logs" type="RichTextLabel" parent="menu_items/menu_logs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.212
+anchor_bottom = 0.269
+offset_left = 224.0
+offset_top = 188.0
+offset_right = 264.228
+offset_bottom = 348.15
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_logs"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 125.0
+offset_right = 807.0
+offset_bottom = 293.0
+scale = Vector2(1.71972, 1.88183)
+texture = ExtResource("45_1woa6")
+expand_mode = 1
+
+[node name="menu_quest" type="Control" parent="menu_items"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 650.0
+script = ExtResource("39_5dbqi")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 135.0
+offset_right = 469.0
+offset_bottom = 175.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]Story[/color][/center]"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 135.0
+offset_right = 873.0
+offset_bottom = 175.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center][color=black]Quests[/color][/center]"
+
+[node name="story" type="RichTextLabel" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 193.0
+offset_right = 512.0
+offset_bottom = 528.0
+bbcode_enabled = true
+
+[node name="quests" type="RichTextLabel" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 188.0
+offset_right = 924.0
+offset_bottom = 523.0
+bbcode_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 133.0
+offset_right = 845.0
+offset_bottom = 173.0
+texture = ExtResource("49_1dxqf")
+
+[node name="TextureRect2" type="TextureRect" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 132.0
+offset_right = 724.0
+offset_bottom = 172.0
+texture = ExtResource("49_1dxqf")
+
+[node name="TextureRect3" type="TextureRect" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 105.0
+offset_right = 921.0
+offset_bottom = 320.0
+texture = ExtResource("51_x2r87")
+
+[node name="TextureRect4" type="TextureRect" parent="menu_items/menu_quest"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 107.0
+offset_right = 524.0
+offset_bottom = 322.0
+texture = ExtResource("52_fu6e4")
+
+[node name="menu_save" type="Control" parent="menu_items"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 650.0
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menu_items/menu_save"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 116.0
+offset_right = 476.0
+offset_bottom = 180.0
+bbcode_enabled = true
+text = "[center][color=black]Nothing to see here [/color][/center]
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="menu_items/menu_save"]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 119.0
+offset_right = 901.0
+offset_bottom = 183.0
+bbcode_enabled = true
+text = "[center][color=black]Nothing to see here [/color][/center]
+"
+
+[node name="menu_options" type="Control" parent="menu_items"]
+visible = false
+anchors_preset = 0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 650.0
+script = ExtResource("43_3a16s")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 189.0
+offset_right = 277.0
+offset_bottom = 218.0
+texture = ExtResource("54_qjte2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 227.0
+offset_right = 467.0
+offset_bottom = 255.0
+bbcode_enabled = true
+text = "[color=black]move[/color]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 377.0
+offset_right = 467.0
+offset_bottom = 405.0
+bbcode_enabled = true
+text = "[color=black]switch magic[/color]"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 407.0
+offset_right = 467.0
+offset_bottom = 435.0
+bbcode_enabled = true
+text = "[color=black]open menu[/color]"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 124.0
+offset_right = 486.0
+offset_bottom = 168.0
+bbcode_enabled = true
+text = "[color=black][font_size=\"25\"]Controls[/font_size][/color]"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 347.0
+offset_right = 467.0
+offset_bottom = 375.0
+bbcode_enabled = true
+text = "[color=black]dash[/color]"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 317.0
+offset_right = 467.0
+offset_bottom = 345.0
+bbcode_enabled = true
+text = "[color=black]magic[/color]"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 287.0
+offset_right = 467.0
+offset_bottom = 315.0
+bbcode_enabled = true
+text = "[color=black]bow[/color]"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 257.0
+offset_right = 467.0
+offset_bottom = 285.0
+bbcode_enabled = true
+text = "[color=black]attack/interact[/color]"
+
+[node name="Button" type="Button" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 345.0
+offset_right = 805.0
+offset_bottom = 395.0
+text = "Quit"
+
+[node name="Button2" type="Button" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 261.0
+offset_right = 805.0
+offset_bottom = 311.0
+text = "Full Screen"
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 253.0
+offset_right = 279.0
+offset_bottom = 282.0
+texture = ExtResource("54_7jh62")
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_options/TextureRect"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 30.0
+offset_bottom = 93.0
+texture = ExtResource("55_cd65l")
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_options/TextureRect/TextureRect"]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -4.0
+texture = ExtResource("56_0nrqv")
+
+[node name="TextureRect2" type="TextureRect" parent="menu_items/menu_options/TextureRect/TextureRect"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 58.0
+offset_right = 42.0
+offset_bottom = 87.0
+texture = ExtResource("57_smo5s")
+
+[node name="TextureRect" type="TextureRect" parent="menu_items/menu_options/TextureRect/TextureRect/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.333
+offset_left = 4.0
+offset_top = -28.0
+offset_right = 19.015
+offset_bottom = 1.0
+texture = ExtResource("58_aarr3")
+
+[node name="TextureRect3" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 215.0
+offset_right = 308.0
+offset_bottom = 244.0
+texture = ExtResource("60_twowm")
+
+[node name="TextureRect3" type="TextureRect" parent="menu_items/menu_options/TextureRect3"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -1.0
+offset_right = -29.0
+offset_bottom = 28.0
+texture = ExtResource("61_rxdby")
+
+[node name="TextureRect4" type="TextureRect" parent="menu_items/menu_options/TextureRect3"]
+layout_mode = 0
+offset_left = -29.0
+offset_right = 1.0
+offset_bottom = 29.0
+texture = ExtResource("62_gr8je")
+
+[node name="TextureRect4" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 408.0
+offset_right = 282.0
+offset_bottom = 437.0
+texture = ExtResource("63_vm7xi")
+
+[node name="TextureRect5" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 44.0
+offset_right = 675.0
+offset_bottom = 259.0
+texture = ExtResource("43_i7kfa")
+
+[node name="TextureRect6" type="TextureRect" parent="menu_items/menu_options"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 99.0
+offset_right = 507.0
+offset_bottom = 314.0
+texture = ExtResource("46_k4um1")
+
+[node name="menu_inventory" parent="menu_items" instance=ExtResource("39_jgt8g")]
+visible = false
+
+[node name="menu_side_buttons" type="Control" parent="menu_items"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 650.0
+
+[node name="Button1" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 156.0
+offset_right = 47.0
+offset_bottom = 191.0
+text = "1"
+
+[node name="Button2" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 212.0
+offset_right = 47.0
+offset_bottom = 248.0
+text = "2"
+
+[node name="Button3" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 265.0
+offset_right = 45.0
+offset_bottom = 302.0
+text = "3"
+
+[node name="Button4" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 321.0
+offset_right = 37.0
+offset_bottom = 357.0
+text = "4"
+
+[node name="Button5" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 378.0
+offset_right = 46.0
+offset_bottom = 413.0
+text = "5"
+
+[node name="Button6" type="Button" parent="menu_items/menu_side_buttons"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.152941)
+layout_mode = 2
+offset_top = 434.0
+offset_right = 51.0
+offset_bottom = 469.0
+text = "6"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="health_max" from="menu_items/menu_stats" to="." method="_on_menu_stats_health"]
+[connection signal="magic_max" from="menu_items/menu_stats" to="." method="_on_menu_stats_magic"]
+[connection signal="update_active_spells" from="menu_items/menu_stats" to="." method="_on_menu_stats_update_active_spells"]
+[connection signal="minus" from="menu_items/menu_stats/health" to="menu_items/menu_stats" method="_on_health_minus"]
+[connection signal="plus" from="menu_items/menu_stats/health" to="menu_items/menu_stats" method="_on_health_plus"]
+[connection signal="minus" from="menu_items/menu_stats/magic" to="menu_items/menu_stats" method="_on_magic_minus"]
+[connection signal="plus" from="menu_items/menu_stats/magic" to="menu_items/menu_stats" method="_on_magic_plus"]
+[connection signal="minus" from="menu_items/menu_stats/energy" to="menu_items/menu_stats" method="_on_energy_minus"]
+[connection signal="plus" from="menu_items/menu_stats/energy" to="menu_items/menu_stats" method="_on_energy_plus"]
+[connection signal="minus" from="menu_items/menu_stats/strength" to="menu_items/menu_stats" method="_on_strength_minus"]
+[connection signal="plus" from="menu_items/menu_stats/strength" to="menu_items/menu_stats" method="_on_strength_plus"]
+[connection signal="pressed" from="menu_items/menu_options/Button" to="menu_items/menu_options" method="_on_button_pressed2"]
+[connection signal="pressed" from="menu_items/menu_options/Button2" to="menu_items/menu_options" method="_on_button_2_pressed"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button1" to="." method="_on_button_pressed1"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button2" to="." method="_on_button_pressed2"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button3" to="." method="_on_button_pressed3"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button4" to="." method="_on_button_pressed4"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button5" to="." method="_on_button_pressed5"]
+[connection signal="pressed" from="menu_items/menu_side_buttons/Button6" to="." method="_on_button_pressed6"]

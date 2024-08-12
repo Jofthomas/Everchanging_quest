@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5bfgafbv5jhq"]
+
+[ext_resource type="Script" path="res://src/screens/loading_screen.gd" id="1_vv4se"]
+[ext_resource type="VideoStream" path="res://assets/Menu/loading.ogv" id="2_88jhf"]
+
+[node name="Loading" type="Node2D"]
+script = ExtResource("1_vv4se")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_88jhf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 318)

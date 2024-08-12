@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://n6yioyslv8lw"]
+
+[ext_resource type="Script" path="res://src/combat/attacks/bow.gd" id="1_w3i8e"]
+[ext_resource type="PackedScene" uid="uid://f1tmmuhgghdp" path="res://src/combat/attack_effects/StunEffect.tscn" id="2_xd8on"]
+[ext_resource type="Script" path="res://src/combat/attacks/arrow.gd" id="3_v3dg0"]
+[ext_resource type="Texture2D" uid="uid://cxhthcmou5qjj" path="res://assets/Player/Red Sprite/New/Top Down/Arrow.png" id="4_yl5pl"]
+[ext_resource type="Texture2D" uid="uid://ct3ibw5sq4n5v" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Resources/Equipments/11.png" id="5_rm4ba"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhi72"]
+radius = 2.0
+height = 12.0
+
+[node name="Bow" type="Node2D" groups=["equipement"]]
+visible = false
+script = ExtResource("1_w3i8e")
+attack_effects = Array[PackedScene]([ExtResource("2_xd8on")])
+
+[node name="Arrow" type="CharacterBody2D" parent="."]
+visible = false
+script = ExtResource("3_v3dg0")
+
+[node name="Timer" type="Timer" parent="Arrow"]
+wait_time = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow"]
+texture = ExtResource("4_yl5pl")
+
+[node name="Area2D" type="Area2D" parent="Arrow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/Area2D"]
+position = Vector2(2, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vhi72")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("5_rm4ba")
+
+[connection signal="timeout" from="Arrow/Timer" to="Arrow" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Arrow/Area2D" to="Arrow" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Arrow/Area2D" to="Arrow" method="_on_area_2d_body_entered"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuexhsgup7g5i"]
+
+[ext_resource type="Script" path="res://src/screens/main_menu.gd" id="1_sluju"]
+[ext_resource type="VideoStream" path="res://assets/Menu/converted_video.ogv" id="2_xyvg3"]
+[ext_resource type="AudioStream" uid="uid://cmhaij37lisdd" path="res://assets/audio/xDeviruchi - Title Theme .wav" id="3_6tlmp"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_sluju")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.447
+offset_left = -364.0
+offset_top = -188.0
+offset_right = 1556.0
+offset_bottom = 610.344
+stream = ExtResource("2_xyvg3")
+autoplay = true
+loop = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Play"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(597, 362)
+zoom = Vector2(0.6, 0.6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6tlmp")
+volume_db = -19.063
+pitch_scale = 0.86
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

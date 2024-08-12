@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://butu01h6urjrq"]
+
+[ext_resource type="Script" path="res://src/npc/interact_actions/dialog_manager.gd" id="1_ey1ho"]
+[ext_resource type="Texture2D" uid="uid://d1pouiywleamm" path="res://assets/dialog.png" id="2_2bblc"]
+[ext_resource type="Script" path="res://src/npc/scroll_down.gd" id="3_t5bgb"]
+[ext_resource type="Texture2D" uid="uid://d1ikkc6p536ip" path="res://assets/Menu_assets/Keyboard/escape.png" id="4_3ubqw"]
+[ext_resource type="Texture2D" uid="uid://c3yxj7oxrgw46" path="res://assets/Player/Red Sprite 3/@Extra/Character Portrait.png" id="5_gp220"]
+[ext_resource type="PackedScene" uid="uid://bg7nxw56kpbph" path="res://src/player/Shop.tscn" id="6_ut682"]
+
+[node name="DialogManager" type="Node2D"]
+script = ExtResource("1_ey1ho")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -248.0
+offset_right = 575.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 146.0
+offset_right = 1101.0
+offset_bottom = 191.0
+texture = ExtResource("2_2bblc")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -35.0
+offset_right = 1101.0
+offset_bottom = 147.0
+texture = ExtResource("2_2bblc")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 875.0
+offset_top = -80.0
+offset_right = 1093.0
+offset_bottom = -34.0
+texture = ExtResource("2_2bblc")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -31.0
+offset_right = 1085.0
+offset_bottom = 138.0
+script = ExtResource("3_t5bgb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 148.0
+offset_right = 1101.0
+offset_bottom = 190.0
+placeholder_text = "write something here..."
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+offset_left = 185.0
+offset_top = 332.0
+offset_right = 213.0
+offset_bottom = 359.0
+texture = ExtResource("4_3ubqw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+z_index = -1
+offset_left = 227.0
+offset_top = 332.0
+offset_right = 471.0
+offset_bottom = 359.0
+text = "Press Escape to quit"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+offset_left = 55.0
+offset_top = 232.0
+offset_right = 153.0
+offset_bottom = 388.0
+texture = ExtResource("5_gp220")
+
+[node name="NPCNAME" type="RichTextLabel" parent="CanvasLayer"]
+z_index = 1
+offset_left = 889.0
+offset_top = 325.0
+offset_right = 1080.0
+offset_bottom = 357.0
+
+[node name="Shop" parent="CanvasLayer" instance=ExtResource("6_ut682")]
+clip_contents = true
+anchors_preset = -1
+
+[connection signal="text_submitted" from="CanvasLayer/Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="request_completed" from="CanvasLayer/HTTPRequest" to="." method="message_back"]

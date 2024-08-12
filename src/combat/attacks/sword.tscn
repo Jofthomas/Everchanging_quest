@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgi885o2yqo58"]
+
+[ext_resource type="Script" path="res://src/combat/attacks/sword.gd" id="1_amd5r"]
+[ext_resource type="PackedScene" uid="uid://cxbrrx6vqeq0s" path="res://src/combat/attack_effects/KnockBackEffect.tscn" id="2_dyev1"]
+[ext_resource type="Texture2D" uid="uid://81tucbje8ogj" path="res://assets/Menu_assets/Super Asset Bundle #2 - Adventure Time v1.5/Adventure Book Bonus/Gold Book/Sprites/Book Resources/Equipments/14.png" id="3_v3clv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvvsf"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7e4g"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4oca"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sjt3"]
+radius = 12.0
+
+[node name="Sword" type="Node2D" groups=["equipement"]]
+script = ExtResource("1_amd5r")
+attack_effects = Array[PackedScene]([ExtResource("2_dyev1")])
+
+[node name="AreaTop" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTop"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_rvvsf")
+
+[node name="AreaBottom" type="Area2D" parent="."]
+
+[node name="bottom" type="CollisionShape2D" parent="AreaBottom"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_b7e4g")
+
+[node name="AreaLeft" type="Area2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="AreaLeft"]
+position = Vector2(-11, 0)
+shape = SubResource("CircleShape2D_w4oca")
+
+[node name="AreaRight" type="Area2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2(11, 0)
+shape = SubResource("CircleShape2D_7sjt3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_v3clv")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://6jnvg0qov65i"]
+
+[ext_resource type="Script" path="res://src/combat/damage_area_component.gd" id="1_tbu2t"]
+[ext_resource type="PackedScene" uid="uid://cxbrrx6vqeq0s" path="res://src/combat/attack_effects/KnockBackEffect.tscn" id="2_1038c"]
+
+[node name="DamageAreaComponent" type="Area2D"]
+script = ExtResource("1_tbu2t")
+attack_effects = Array[PackedScene]([ExtResource("2_1038c")])
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

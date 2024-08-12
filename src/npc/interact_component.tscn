@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cww3oj4286l6i"]
+
+[ext_resource type="Script" path="res://src/npc/interact_component.gd" id="1_l8cwb"]
+
+[sub_resource type="Theme" id="Theme_b6sbq"]
+default_font_size = 10
+
+[node name="InteractComponent" type="Area2D" groups=["interact"]]
+script = ExtResource("1_l8cwb")
+textBB = "[bgcolor=#d1e4e4][center]press [color=green]A[/color] to interact[/center][/bgcolor]"
+
+[node name="InteractIndicator" type="RichTextLabel" parent="."]
+z_as_relative = false
+offset_left = -76.0
+offset_top = -36.0
+offset_right = 75.0
+offset_bottom = -15.0
+theme = SubResource("Theme_b6sbq")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[bgcolor=#d1e4e4][center]press [color=green]A[/color] to interact[/center][/bgcolor]"
+fit_content = true
+scroll_active = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

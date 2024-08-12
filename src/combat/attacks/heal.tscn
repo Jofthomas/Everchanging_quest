@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqu5mlne2kd2v"]
+
+[ext_resource type="Texture2D" uid="uid://bq1t6bmc11yll" path="res://assets/spells/spells/Buff n Debuff VFX pack 01/Buff n Debuff P1 03.png" id="1_guhxb"]
+[ext_resource type="Script" path="res://src/combat/attacks/heal.gd" id="1_p633i"]
+[ext_resource type="Texture2D" uid="uid://cfhtvq04p5xgp" path="res://assets/spells/spellsIcons/Pack2/single/release_v1.2-single_2.png" id="2_2xgex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dnhw"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgmj3"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k5cr"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qir4j"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdrcq"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_068qo"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otd8q"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1ja5"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n6ss"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(384, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o36ei"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(432, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x24hi"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(480, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdleb"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(528, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i7oo"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(576, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7dtj"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(624, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgalv"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(672, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36y4e"]
+atlas = ExtResource("1_guhxb")
+region = Rect2(720, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4jki"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dnhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgmj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k5cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qir4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdrcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_068qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otd8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1ja5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n6ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o36ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x24hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdleb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i7oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7dtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgalv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36y4e")
+}],
+"loop": false,
+"name": &"heal",
+"speed": 10.0
+}]
+
+[node name="Heal" type="Node2D" groups=["equipement"]]
+z_index = -1
+script = ExtResource("1_p633i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_j4jki")
+animation = &"heal"
+frame = 15
+frame_progress = 1.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_2xgex")

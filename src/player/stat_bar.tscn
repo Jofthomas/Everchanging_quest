@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmyh4iaqo5ww7"]
+
+[ext_resource type="Script" path="res://src/player/node_2d.gd" id="1_ddqyw"]
+
+[node name="StatBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 58.0
+offset_top = 75.0
+offset_right = 58.0
+offset_bottom = 75.0
+script = ExtResource("1_ddqyw")

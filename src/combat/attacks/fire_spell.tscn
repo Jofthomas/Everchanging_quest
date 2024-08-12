@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://br3utbkkn3ub3"]
+
+[ext_resource type="Script" path="res://src/combat/attacks/fire_spell.gd" id="1_kqwl0"]
+[ext_resource type="Texture2D" uid="uid://cnsgwrcahrwrg" path="res://assets/dungeons_assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_1.png" id="2_qgbfy"]
+[ext_resource type="Script" path="res://src/combat/attacks/flamme.gd" id="2_qvgtl"]
+[ext_resource type="PackedScene" uid="uid://cxbrrx6vqeq0s" path="res://src/combat/attack_effects/KnockBackEffect.tscn" id="2_ybrly"]
+[ext_resource type="Texture2D" uid="uid://d05qq87e3qxir" path="res://assets/dungeons_assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_2.png" id="3_hrd4c"]
+[ext_resource type="Texture2D" uid="uid://bjje0fpqayuyj" path="res://assets/dungeons_assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_3.png" id="4_wfg63"]
+[ext_resource type="Texture2D" uid="uid://bqqiaoa331emx" path="res://assets/dungeons_assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flamethrower/flamethrower_1_4.png" id="5_q1o6u"]
+[ext_resource type="Texture2D" uid="uid://cdwo0v162f28q" path="res://assets/spells/spellsIcons/Pack2/single/release_v1.2-single_43.png" id="8_rbnn8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkxek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qgbfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hrd4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wfg63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q1o6u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umxer"]
+radius = 7.0
+height = 20.0
+
+[node name="FireSpell" type="Node2D" groups=["equipement"]]
+script = ExtResource("1_kqwl0")
+attack_effects = Array[PackedScene]([ExtResource("2_ybrly")])
+
+[node name="FlammeTemplate" type="Node2D" parent="."]
+visible = false
+script = ExtResource("2_qvgtl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlammeTemplate"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_rkxek")
+frame_progress = 0.775694
+
+[node name="Area2D" type="Area2D" parent="FlammeTemplate"]
+
+[node name="ShapeCast2D" type="CollisionShape2D" parent="FlammeTemplate/Area2D"]
+shape = SubResource("CapsuleShape2D_umxer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_rbnn8")
+
+[connection signal="animation_finished" from="FlammeTemplate/AnimatedSprite2D" to="FlammeTemplate" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="FlammeTemplate/Area2D" to="FlammeTemplate" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,296 @@
+[gd_scene load_steps=54 format=3 uid="uid://bcb6c3o0biuhb"]
+
+[ext_resource type="Script" path="res://src/screens/dungeon.gd" id="1_qyti4"]
+[ext_resource type="TileSet" uid="uid://dsjepsyqcv1ji" path="res://src/tilsets/dungeon.tres" id="2_qpoja"]
+[ext_resource type="Script" path="res://src/screens/loading_screen.gd" id="5_eeufh"]
+[ext_resource type="VideoStream" path="res://assets/Menu/loading.ogv" id="6_3g4aa"]
+[ext_resource type="Texture2D" uid="uid://c7qkklewko428" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/01.png" id="6_8we27"]
+[ext_resource type="Texture2D" uid="uid://1h32jqv83k1f" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Idle/1.png" id="6_phjqu"]
+[ext_resource type="Script" path="res://src/screens/objective.gd" id="6_tguaf"]
+[ext_resource type="AudioStream" uid="uid://iph2ulp07a2h" path="res://assets/audio/xDeviruchi - Mysterious Dungeon.wav" id="7_6hu11"]
+[ext_resource type="Texture2D" uid="uid://xxbf3cc35fam" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/02.png" id="7_qnwqy"]
+[ext_resource type="Texture2D" uid="uid://cilpgdkvtbnvi" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/03.png" id="8_l51n1"]
+[ext_resource type="Texture2D" uid="uid://dovid6eqxftnp" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/04.png" id="9_d3ftr"]
+[ext_resource type="Texture2D" uid="uid://b3nqcavbfxur1" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/05.png" id="10_ymxoj"]
+[ext_resource type="Texture2D" uid="uid://cfvovc2in1s7d" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/06.png" id="11_sdhd7"]
+[ext_resource type="Texture2D" uid="uid://bip6aaglbs4a6" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/07.png" id="12_i4os0"]
+[ext_resource type="Texture2D" uid="uid://cbapy4m61x5ty" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/08.png" id="13_fx43a"]
+[ext_resource type="Texture2D" uid="uid://drh7cxuw7acms" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/09.png" id="14_aufsq"]
+[ext_resource type="Texture2D" uid="uid://d0kt7a74blqwc" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/10.png" id="15_0ivu2"]
+[ext_resource type="Texture2D" uid="uid://psgnpnmu7ibw" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/11.png" id="16_ju30y"]
+[ext_resource type="Texture2D" uid="uid://4mklooxctrkh" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/12.png" id="17_pqv6k"]
+[ext_resource type="Texture2D" uid="uid://dlkadws0tliay" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/13.png" id="18_bo3wy"]
+[ext_resource type="Texture2D" uid="uid://bk5tth0df5y17" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/14.png" id="19_e1mva"]
+[ext_resource type="Texture2D" uid="uid://drcweq6qpf0bi" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/15.png" id="20_jxcdf"]
+[ext_resource type="Texture2D" uid="uid://bsgmgb1nmx8h7" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/16.png" id="21_01diu"]
+[ext_resource type="Texture2D" uid="uid://bgkja5pab2w7i" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/17.png" id="22_d5h4e"]
+[ext_resource type="Texture2D" uid="uid://cteycb1clx2sb" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/18.png" id="23_8qk6g"]
+[ext_resource type="Texture2D" uid="uid://b3chakil20low" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/19.png" id="24_x7hhc"]
+[ext_resource type="Texture2D" uid="uid://nu5fkek3fmgb" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/20.png" id="25_mfllq"]
+[ext_resource type="Texture2D" uid="uid://8gysivffl3er" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/21.png" id="26_0l8dl"]
+[ext_resource type="Texture2D" uid="uid://yb8wx587mqfd" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/22.png" id="27_ij4b5"]
+[ext_resource type="Texture2D" uid="uid://dkskh3nxpnli4" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/23.png" id="28_ipela"]
+[ext_resource type="Texture2D" uid="uid://y3hqfn80vjrh" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/24.png" id="29_5x6hq"]
+[ext_resource type="Texture2D" uid="uid://druhwomgrsecx" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/25.png" id="30_g8b2o"]
+[ext_resource type="Texture2D" uid="uid://b5f4yd22bica8" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/26.png" id="31_c38ch"]
+[ext_resource type="Texture2D" uid="uid://d4ngwes8kxh2k" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/27.png" id="32_81vtt"]
+[ext_resource type="Texture2D" uid="uid://dooow5r0y2nnm" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/28.png" id="33_b7134"]
+[ext_resource type="Texture2D" uid="uid://ck2d3tstp8cas" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/29.png" id="34_cqmca"]
+[ext_resource type="Texture2D" uid="uid://c84doam266c8c" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/30.png" id="35_r2i8g"]
+[ext_resource type="Texture2D" uid="uid://dklhj4oea4ec8" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/31.png" id="36_enghp"]
+[ext_resource type="Texture2D" uid="uid://em2epr3l67bd" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/32.png" id="37_0xawt"]
+[ext_resource type="Texture2D" uid="uid://cj6o8wdihcb1m" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/33.png" id="38_ucsyv"]
+[ext_resource type="Texture2D" uid="uid://4buxbakkg56e" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/34.png" id="39_6obg1"]
+[ext_resource type="Texture2D" uid="uid://ckm6wreffq1bx" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/35.png" id="40_54wmq"]
+[ext_resource type="Texture2D" uid="uid://ccia5b6xo4rjp" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/36.png" id="41_j8exj"]
+[ext_resource type="Texture2D" uid="uid://coclwwuer4k1x" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/37.png" id="42_j2f4j"]
+[ext_resource type="Texture2D" uid="uid://d2mau3qc4r8es" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/38.png" id="43_luwvw"]
+[ext_resource type="Texture2D" uid="uid://depjt3bgv5qt0" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/39.png" id="44_1blo1"]
+[ext_resource type="Texture2D" uid="uid://brcwy3iore12s" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/40.png" id="45_uqadu"]
+[ext_resource type="Texture2D" uid="uid://ddi0wybo4dnjq" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/41.png" id="46_ugkof"]
+[ext_resource type="Texture2D" uid="uid://b7bty73gned1l" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/42.png" id="47_rs21r"]
+[ext_resource type="Texture2D" uid="uid://dahdn2bql2llk" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/43.png" id="48_yiemv"]
+[ext_resource type="Texture2D" uid="uid://ckgd056olr2hg" path="res://assets/Menu_assets/Objective/7 Dialogue Box/Close/44.png" id="49_ek6h8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_71xfq"]
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q8e2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8we27")
+}, {
+"duration": 1.8,
+"texture": ExtResource("7_qnwqy")
+}, {
+"duration": 1.8,
+"texture": ExtResource("8_l51n1")
+}, {
+"duration": 1.8,
+"texture": ExtResource("9_d3ftr")
+}, {
+"duration": 1.8,
+"texture": ExtResource("10_ymxoj")
+}, {
+"duration": 1.8,
+"texture": ExtResource("11_sdhd7")
+}, {
+"duration": 1.8,
+"texture": ExtResource("12_i4os0")
+}, {
+"duration": 1.8,
+"texture": ExtResource("13_fx43a")
+}, {
+"duration": 1.8,
+"texture": ExtResource("14_aufsq")
+}, {
+"duration": 1.8,
+"texture": ExtResource("15_0ivu2")
+}, {
+"duration": 1.8,
+"texture": ExtResource("16_ju30y")
+}, {
+"duration": 1.8,
+"texture": ExtResource("17_pqv6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bo3wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e1mva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jxcdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_01diu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d5h4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8qk6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x7hhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mfllq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0l8dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ij4b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ipela")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5x6hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_g8b2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c38ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_81vtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_b7134")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cqmca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_r2i8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_enghp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0xawt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ucsyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6obg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_54wmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_j8exj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_j2f4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_luwvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1blo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_uqadu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ugkof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rs21r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yiemv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ek6h8")
+}],
+"loop": false,
+"name": &"close",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_phjqu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource("1_qyti4")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_71xfq")
+
+[node name="TileMap" type="TileMap" parent="NavigationRegion2D"]
+tile_set = ExtResource("2_qpoja")
+collision_visibility_mode = 2
+navigation_visibility_mode = 2
+format = 2
+
+[node name="LoadingScreen" type="CanvasLayer" parent="."]
+script = ExtResource("5_eeufh")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="LoadingScreen"]
+z_index = 1
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 1929.0
+offset_bottom = 1099.0
+scale = Vector2(0.591967, 0.586768)
+stream = ExtResource("6_3g4aa")
+autoplay = true
+loop = true
+
+[node name="ColorRect" type="ColorRect" parent="LoadingScreen"]
+visible = false
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.46, 0.0138, 0.0138, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LoadingScreen/ColorRect"]
+z_index = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_left = 234.0
+offset_top = 312.0
+offset_right = 912.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]génération du donjon...[/center]"
+
+[node name="Bar" type="ColorRect" parent="LoadingScreen/ColorRect"]
+z_index = 2
+layout_mode = 2
+offset_left = 308.0
+offset_top = 390.0
+offset_right = 817.0
+offset_bottom = 430.0
+
+[node name="HTTPRequest1" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_6hu11")
+volume_db = -11.731
+pitch_scale = 0.91
+autoplay = true
+
+[node name="objective" type="CanvasLayer" parent="."]
+script = ExtResource("6_tguaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="objective"]
+position = Vector2(583, 324)
+sprite_frames = SubResource("SpriteFrames_8q8e2")
+animation = &"close"
+frame = 43
+frame_progress = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="objective"]
+offset_left = 335.0
+offset_top = 289.0
+offset_right = 864.0
+offset_bottom = 367.0
+bbcode_enabled = true
+text = "[color=black] This is the objective[/color]"
+
+[node name="Timer" type="Timer" parent="objective"]
+wait_time = 8.0
+
+[connection signal="request_completed" from="HTTPRequest1" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="." method="_on_http_request_2_request_completed"]
+[connection signal="animation_finished" from="objective/AnimatedSprite2D" to="objective" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="objective/Timer" to="objective" method="_on_timer_timeout"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://cef2g51nmqwl4"]
+
+[ext_resource type="Texture2D" uid="uid://btoytmrwrrkru" path="res://assets/NPCs/Bard/bard1_play1 (1).png" id="1_t2c5s"]
+[ext_resource type="Texture2D" uid="uid://bjlwnusihvwpa" path="res://assets/NPCs/Bard/bard1_play1 (2).png" id="2_i6amh"]
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="3_i43dw"]
+[ext_resource type="Texture2D" uid="uid://dkn4ai8r387qk" path="res://assets/NPCs/Bard/bard1_play1 (3).png" id="3_ivhgt"]
+[ext_resource type="PackedScene" uid="uid://butu01h6urjrq" path="res://src/npc/interact_actions/dialog_manager.tscn" id="4_fm3nb"]
+[ext_resource type="Texture2D" uid="uid://w5n54tlaghx1" path="res://assets/NPCs/Bard/bard1_play2 (1).png" id="4_pbpys"]
+[ext_resource type="Texture2D" uid="uid://8ph5uychjkb6" path="res://assets/NPCs/Bard/bard1_play2 (2).png" id="5_h6q0p"]
+[ext_resource type="Texture2D" uid="uid://d4ii2wpvstpf1" path="res://assets/NPCs/Bard/bard1_play2 (3).png" id="6_w8fsk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t2c5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6amh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ivhgt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pbpys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h6q0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w8fsk")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3q6q"]
+radius = 37.0135
+
+[node name="alchimiste" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle_working"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("actionNode", "_animated_sprite") instance=ExtResource("3_i43dw")]
+actionNode = NodePath("../DialogManager")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_y3q6q")
+
+[node name="DialogManager" parent="." instance=ExtResource("4_fm3nb")]
+npc_type = "Bard"
+npc_genre = "Male"
+
+[connection signal="body_entered" from="InteractComponent" to="." method="_on_interact_component_body_entered"]
+[connection signal="body_exited" from="InteractComponent" to="." method="_on_interact_component_body_exited"]

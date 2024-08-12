@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxbrrx6vqeq0s"]
+
+[ext_resource type="Script" path="res://src/combat/attack_effects/KnockBackEffect.gd" id="1_da72c"]
+
+[node name="KnockBackeffect" type="Node2D"]
+script = ExtResource("1_da72c")

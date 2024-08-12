@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds4f3wui3doi7"]
+
+[ext_resource type="Script" path="res://src/npc/interact_actions/enter_dungeon_action.gd" id="1_nb2ot"]
+
+[node name="EnterDungeonAction" type="Node2D"]
+script = ExtResource("1_nb2ot")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

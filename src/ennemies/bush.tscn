@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpvgg8x4rip14"]
+
+[ext_resource type="PackedScene" uid="uid://0s5idk72xmfh" path="res://src/ennemies/ennemy_handler.tscn" id="1_a2lt8"]
+[ext_resource type="PackedScene" uid="uid://cckil36lyyy5q" path="res://src/combat/health_component.tscn" id="2_yt05m"]
+[ext_resource type="PackedScene" uid="uid://b21624kvdrg8e" path="res://src/combat/hitbox_component.tscn" id="3_e5euh"]
+[ext_resource type="PackedScene" uid="uid://co7lhukrmy10j" path="res://src/ennemies/ennemy_animation.tscn" id="4_gqsly"]
+[ext_resource type="Texture2D" uid="uid://d0l82otiulrbh" path="res://assets/Monsters/Bushling/Bushling Back.png" id="5_ge3sb"]
+[ext_resource type="Texture2D" uid="uid://da1avm6alsypl" path="res://assets/Monsters/Bushling/Bushling Side.png" id="6_kctkb"]
+[ext_resource type="Texture2D" uid="uid://bgdnc81has41f" path="res://assets/Monsters/Bushling/Bushling Front.png" id="7_pneut"]
+[ext_resource type="PackedScene" uid="uid://6jnvg0qov65i" path="res://src/combat/damage_area_component.tscn" id="8_77q26"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c66xe"]
+radius = 130.188
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1pi1"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5i0h"]
+
+[node name="Bush" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="EnnemyHandler" parent="." node_paths=PackedStringArray("anim", "shape", "hitbox", "damage_area") instance=ExtResource("1_a2lt8")]
+anim = NodePath("../EnnemyAnimation")
+shape = NodePath("../CollisionShape2D")
+hitbox = NodePath("../HitboxComponent")
+damage_area = NodePath("../DamageAreaComponent")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnnemyHandler"]
+shape = SubResource("CircleShape2D_c66xe")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w1pi1")
+metadata/_edit_lock_ = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_yt05m")]
+position = Vector2(0, -4)
+max_health = 5
+metadata/_edit_lock_ = true
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp", "effect_component", "body") instance=ExtResource("3_e5euh")]
+health_comp = NodePath("../HealthComponent")
+effect_component = NodePath("../EnnemyHandler")
+body = NodePath("..")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_v5i0h")
+metadata/_edit_lock_ = true
+
+[node name="EnnemyAnimation" parent="." instance=ExtResource("4_gqsly")]
+back_texture = ExtResource("5_ge3sb")
+side_texture = ExtResource("6_kctkb")
+front_texture = ExtResource("7_pneut")
+flip_value = false
+
+[node name="DamageAreaComponent" parent="." instance=ExtResource("8_77q26")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaComponent"]
+shape = SubResource("CircleShape2D_v5i0h")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="EnnemyHandler" to="EnnemyHandler" method="_on_body_entered"]
+[connection signal="body_exited" from="EnnemyHandler" to="EnnemyHandler" method="_on_body_exited"]
+[connection signal="die" from="HealthComponent" to="EnnemyHandler" method="_on_health_component_die"]
+[connection signal="hit" from="HealthComponent" to="EnnemyHandler" method="_on_health_component_hit"]
+[connection signal="end_death_animation" from="EnnemyAnimation" to="EnnemyHandler" method="_on_ennemy_animation_end_death_animation"]

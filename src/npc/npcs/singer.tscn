@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5vfrl3ad75le"]
+
+[ext_resource type="Texture2D" uid="uid://dv4x3jxgu5cto" path="res://assets/NPCs/other NPCs/Dancer/npcact1_6 (1).png" id="1_uci77"]
+[ext_resource type="Texture2D" uid="uid://buxysmaoxgpd7" path="res://assets/NPCs/other NPCs/Dancer/npcact1_6 (2).png" id="2_dui3d"]
+[ext_resource type="Texture2D" uid="uid://c4uwut28mwt6w" path="res://assets/NPCs/other NPCs/Dancer/npcact1_6 (3).png" id="3_o2tpp"]
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="4_dsahe"]
+[ext_resource type="Script" path="res://src/npc/non_interact_component.gd" id="5_bln7g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dui3d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uci77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dui3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o2tpp")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2p45"]
+radius = 50.04
+
+[node name="alchimiste" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("_animated_sprite") instance=ExtResource("4_dsahe")]
+script = ExtResource("5_bln7g")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+textBB = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_r2p45")

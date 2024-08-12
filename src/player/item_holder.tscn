@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cam7684td3myl"]
+
+[ext_resource type="Script" path="res://src/player/item_holder.gd" id="1_en2yd"]
+
+[node name="ItemHolder" type="Panel"]
+offset_left = 654.0
+offset_top = 211.0
+offset_right = 686.0
+offset_bottom = 243.0
+script = ExtResource("1_en2yd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 131.0
+offset_bottom = 131.0
+scale = Vector2(0.2, 0.2)
+expand_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

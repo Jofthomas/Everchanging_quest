@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://b12hbbf7j7syq"]
+
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="2_d6pqx"]
+[ext_resource type="PackedScene" uid="uid://butu01h6urjrq" path="res://src/npc/interact_actions/dialog_manager.tscn" id="3_xog0h"]
+[ext_resource type="Texture2D" uid="uid://csem3jubsn4ia" path="res://assets/NPCs/Simple NPC/Miner.png" id="4_0qv2c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scn7a"]
+atlas = ExtResource("4_0qv2c")
+region = Rect2(0, 0, 22, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ac4"]
+atlas = ExtResource("4_0qv2c")
+region = Rect2(22, 0, 22, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v14x3"]
+atlas = ExtResource("4_0qv2c")
+region = Rect2(44, 0, 22, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5prl"]
+atlas = ExtResource("4_0qv2c")
+region = Rect2(66, 0, 22, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scn7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ac4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v14x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5prl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scn7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ac4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v14x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5prl")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3q6q"]
+radius = 37.0135
+
+[node name="forgeron" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle_working"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("actionNode", "_animated_sprite") instance=ExtResource("2_d6pqx")]
+actionNode = NodePath("../DialogManager")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_y3q6q")
+
+[node name="DialogManager" parent="." instance=ExtResource("3_xog0h")]
+npc_type = "Rick"
+npc_genre = "Male"
+
+[connection signal="body_entered" from="InteractComponent" to="." method="_on_interact_component_body_entered"]
+[connection signal="body_exited" from="InteractComponent" to="." method="_on_interact_component_body_exited"]

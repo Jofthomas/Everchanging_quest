@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyr7yxcj5sre5"]
+
+[ext_resource type="Texture2D" uid="uid://c04fa86whg3" path="res://assets/NPCs/other NPCs/Musician/npcact1_4 (1).png" id="1_5b78m"]
+[ext_resource type="Texture2D" uid="uid://brqj1cnbghapn" path="res://assets/NPCs/other NPCs/Musician/npcact1_4 (2).png" id="2_b80fc"]
+[ext_resource type="Texture2D" uid="uid://w7avdula8gk0" path="res://assets/NPCs/other NPCs/Musician/npcact1_4 (3).png" id="3_5rb5g"]
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="4_m3qv3"]
+[ext_resource type="Script" path="res://src/npc/non_interact_component.gd" id="5_a1snf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5b78m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5b78m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b80fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5rb5g")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2p45"]
+radius = 54.0093
+
+[node name="alchimiste" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("_animated_sprite") instance=ExtResource("4_m3qv3")]
+script = ExtResource("5_a1snf")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+textBB = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_r2p45")

@@ -1,0 +1,140 @@
+[gd_scene load_steps=21 format=3 uid="uid://cjd3amsydwnj6"]
+
+[ext_resource type="Script" path="res://src/combat/attacks/fire_spell.gd" id="1_7yjia"]
+[ext_resource type="PackedScene" uid="uid://f1tmmuhgghdp" path="res://src/combat/attack_effects/StunEffect.tscn" id="2_pik7h"]
+[ext_resource type="Script" path="res://src/combat/attacks/flamme.gd" id="3_1iu0h"]
+[ext_resource type="Texture2D" uid="uid://s1rji5vqdb6p" path="res://assets/spells/spells/Thunder Effect 02/Thunder Strike/Thunderstrike wo blur.png" id="4_sb6tm"]
+[ext_resource type="Texture2D" uid="uid://c22npby1kidfs" path="res://assets/spells/spellsIcons/Pack1/32x32/9.png" id="5_0c302"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbjka"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47tln"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m7e5"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ol0j"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ebp8"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6f0m"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_755ua"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77h5y"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3n87"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fxf"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hiwp"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o87d"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoqme"]
+atlas = ExtResource("4_sb6tm")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkxek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbjka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47tln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m7e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ol0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ebp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6f0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_755ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77h5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3n87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8fxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hiwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o87d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoqme")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umxer"]
+radius = 7.0
+height = 20.0
+
+[node name="ThunderStorm" type="Node2D" node_paths=PackedStringArray("rootNode") groups=["equipement"]]
+script = ExtResource("1_7yjia")
+rootNode = NodePath(".")
+attack_effects = Array[PackedScene]([ExtResource("2_pik7h")])
+
+[node name="FlammeTemplate" type="Node2D" parent="."]
+visible = false
+script = ExtResource("3_1iu0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlammeTemplate"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_rkxek")
+frame_progress = 0.775694
+
+[node name="Area2D" type="Area2D" parent="FlammeTemplate"]
+
+[node name="ShapeCast2D" type="CollisionShape2D" parent="FlammeTemplate/Area2D"]
+shape = SubResource("CapsuleShape2D_umxer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_0c302")
+
+[connection signal="animation_finished" from="FlammeTemplate/AnimatedSprite2D" to="FlammeTemplate" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="FlammeTemplate/Area2D" to="FlammeTemplate" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

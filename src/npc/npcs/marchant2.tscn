@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://b04c5dfsrghup"]
+
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="2_2vstn"]
+[ext_resource type="Texture2D" uid="uid://bb3yc3bltsuk5" path="res://assets/NPCs/Simple NPC/Fisherman.png" id="2_b706m"]
+[ext_resource type="PackedScene" uid="uid://butu01h6urjrq" path="res://src/npc/interact_actions/dialog_manager.tscn" id="3_27ign"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxrx1"]
+atlas = ExtResource("2_b706m")
+region = Rect2(0, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq864"]
+atlas = ExtResource("2_b706m")
+region = Rect2(14, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roq84"]
+atlas = ExtResource("2_b706m")
+region = Rect2(28, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpvm0"]
+atlas = ExtResource("2_b706m")
+region = Rect2(42, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81e3y"]
+atlas = ExtResource("2_b706m")
+region = Rect2(0, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rsgp"]
+atlas = ExtResource("2_b706m")
+region = Rect2(14, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unekq"]
+atlas = ExtResource("2_b706m")
+region = Rect2(28, 0, 14, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l408"]
+atlas = ExtResource("2_b706m")
+region = Rect2(42, 0, 14, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxrx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq864")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roq84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpvm0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81e3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rsgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unekq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l408")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3q6q"]
+radius = 37.0135
+
+[node name="npc" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle_working"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("actionNode", "_animated_sprite") instance=ExtResource("2_2vstn")]
+actionNode = NodePath("../DialogManager")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_y3q6q")
+
+[node name="DialogManager" parent="." instance=ExtResource("3_27ign")]
+npc_type = "Villager"
+npc_genre = "Male"
+
+[connection signal="body_entered" from="InteractComponent" to="." method="_on_interact_component_body_entered"]
+[connection signal="body_exited" from="InteractComponent" to="." method="_on_interact_component_body_exited"]

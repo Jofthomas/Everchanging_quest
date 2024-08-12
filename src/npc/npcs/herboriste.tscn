@@ -1,0 +1,162 @@
+[gd_scene load_steps=24 format=3 uid="uid://blbbsuqkwtbhw"]
+
+[ext_resource type="Texture2D" uid="uid://csat6yk750hi4" path="res://assets/NPCs/Herbalist/Idle Mixing.png" id="2_vski2"]
+[ext_resource type="Texture2D" uid="uid://c7i3vt4jxbs3r" path="res://assets/NPCs/Herbalist/Idle Adding.png" id="2_xvqeg"]
+[ext_resource type="PackedScene" uid="uid://cww3oj4286l6i" path="res://src/npc/interact_component.tscn" id="3_fmrso"]
+[ext_resource type="PackedScene" uid="uid://butu01h6urjrq" path="res://src/npc/interact_actions/dialog_manager.tscn" id="4_hhoqr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4rx"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sucq"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(0, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvax0"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(25, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i52e"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(50, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txs3i"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(75, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq53a"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(100, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsduh"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(125, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1omtg"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(150, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wpb"]
+atlas = ExtResource("2_xvqeg")
+region = Rect2(175, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tav5p"]
+atlas = ExtResource("2_vski2")
+region = Rect2(0, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0lhh"]
+atlas = ExtResource("2_vski2")
+region = Rect2(25, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_norne"]
+atlas = ExtResource("2_vski2")
+region = Rect2(50, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmup3"]
+atlas = ExtResource("2_vski2")
+region = Rect2(75, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk1qq"]
+atlas = ExtResource("2_vski2")
+region = Rect2(100, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7axf2"]
+atlas = ExtResource("2_vski2")
+region = Rect2(125, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxd68"]
+atlas = ExtResource("2_vski2")
+region = Rect2(150, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6br5p"]
+atlas = ExtResource("2_vski2")
+region = Rect2(175, 0, 25, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sucq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvax0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i52e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txs3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq53a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsduh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1omtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wpb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tav5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0lhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_norne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmup3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk1qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7axf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxd68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6br5p")
+}],
+"loop": true,
+"name": &"idle_working",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3q6q"]
+radius = 37.0135
+
+[node name="herboriste" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_at4rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it2ny")
+animation = &"idle"
+
+[node name="InteractComponent" parent="." node_paths=PackedStringArray("actionNode", "_animated_sprite") instance=ExtResource("3_fmrso")]
+actionNode = NodePath("../DialogManager")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractComponent"]
+shape = SubResource("CircleShape2D_y3q6q")
+
+[node name="DialogManager" parent="." instance=ExtResource("4_hhoqr")]
+npc_type = "Herbalist"
+npc_genre = "Female"
+is_merchant = true
+
+[connection signal="body_entered" from="InteractComponent" to="." method="_on_interact_component_body_entered"]
+[connection signal="body_exited" from="InteractComponent" to="." method="_on_interact_component_body_exited"]

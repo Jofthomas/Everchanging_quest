@@ -43,6 +43,7 @@ offset_left = 113.0
 offset_top = 42.0
 offset_right = 285.0
 offset_bottom = 68.0
+bbcode_enabled = true
 text = "name"
 metadata/_edit_lock_ = true
 
@@ -53,6 +54,7 @@ offset_top = 68.0
 offset_right = 284.0
 offset_bottom = 112.0
 theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "petit item blabz bkbfejfnlz, j'ai pris du temps et bim et bam poiur aller au fin frfr e"
 metadata/_edit_lock_ = true
 
@@ -63,6 +65,7 @@ offset_top = 113.0
 offset_right = 291.0
 offset_bottom = 142.0
 theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "- health : 12                       - hy: 
 - str : 13"
 metadata/_edit_lock_ = true
@@ -74,6 +77,14 @@ offset_top = 44.0
 offset_right = 107.0
 offset_bottom = 108.0
 metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="item_description"]
+z_index = -1
+offset_left = 227.0
+offset_top = 332.0
+offset_right = 471.0
+offset_bottom = 359.0
+text = "Press Escape to quit"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

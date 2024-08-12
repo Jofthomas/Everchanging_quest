@@ -87,7 +87,7 @@ func update():
 
 func remove_based_on_xp(node: StatHolder):
 	if node.level > 1:
-		add_xp(node.level)
+		add_xp(node.cost)
 		node.remove()
 
 func add_based_on_xp(node : StatHolder):

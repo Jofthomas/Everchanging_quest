@@ -37,8 +37,9 @@ func _physics_process(delta: float) -> void:
 		apply_effects()
 		body.move_and_slide()
 		nav.target_position = player_body.global_position
-		
+
 func _process(delta: float) -> void:
+	#anim.update_animation_parameters(true, get_orientation(direction))
 	pass
 
 func get_orientation(vec: Vector2):

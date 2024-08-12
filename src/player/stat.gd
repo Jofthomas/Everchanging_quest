@@ -20,20 +20,20 @@ func _ready() -> void:
 	max_node.text = str(max_level)
 	name_node.text = stat_name
 	level_node.text = str(base_level)
-	cost = base_level
+	cost = 100
 	cost_node.text= str(cost)
 	level = base_level
 	
 func add() -> void:
 	level += 1
-	cost = level
+	cost = cost
 	level_node.text = str(level)
 	cost_node.text= str(cost)
 
 
 func remove() -> void:
 	level -= 1
-	cost = level
+	cost = cost
 	level_node.text = str(level)
 	cost_node.text= str(cost)
 

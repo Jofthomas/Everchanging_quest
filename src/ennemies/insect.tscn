@@ -38,7 +38,7 @@ metadata/_edit_lock_ = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_y8cb0")]
 position = Vector2(0, -4)
-max_health = 5
+max_health = 3
 metadata/_edit_lock_ = true
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_comp", "effect_component", "body") instance=ExtResource("3_heu60")]

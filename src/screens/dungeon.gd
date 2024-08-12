@@ -152,9 +152,18 @@ func place_ennemy(index, position):
 
 func place_enemy_from_api(enemy_name,placements_points):
 	var enemy_scene=load("res://src/ennemies/"+str(enemy_name)+'.tscn')
+	print(placements_points)
+	var r = rng.randi_range ( 0, 5 )
 	var ennemy = enemy_scene.instantiate()
-	ennemy.position = placements_points[0]
+	ennemy.position = placements_points[r]
 	add_child(ennemy)
+	
+func place_npc_from_api(npc_name,placements_points):
+	var npc_scene=load("res://src/npc/"+str(npc_name)+'.tscn')
+	var ths_npc = npc_scene.instantiate()
+	var r = rng.randi_range ( 0, 5 )
+	ths_npc.position = placements_points[r]
+	add_child(ths_npc)
 	
 func get_interest_room(target_size, visited_rooms):
 	visited_rooms.shuffle()
@@ -379,7 +388,14 @@ func _on_http_request_2_request_completed(result: int, response_code: int, heade
 		print(enemy)
 		var placement=placement_point(visited_rooms[enemy.placement])
 		place_enemy_from_api(enemy.name,placement)
-	
+	for b in boss:
+		print(b)
+		var placement=placement_point(visited_rooms[b.placement])
+		place_enemy_from_api(b.name,placement)
+	for n in npcs:
+		print(n)
+		var placement=placement_point(visited_rooms[n.placement])
+		place_npc_from_api(n.name,placement)
 	loading_screen.finish_loading()
 	player.position=start_position
 	print(player)

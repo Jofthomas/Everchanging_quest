@@ -62,13 +62,14 @@ func _holder_clicked(item):
 	if item:
 		Clicked_item = item
 		item_desc.visible = not item_desc.visible
-		item_name.text = item.item_name
-		item_description.text = item.item_desc
+		item_name.text = "[color=black]"+item.item_name+"[/color]"
+		item_description.text = "[color=black]"+item.item_desc+"[/color]"
 		item_sprite.texture = item.get_texture()
 		
-		item_stats.text = ""
+		item_stats.text =   "Cost : "+str(item.cost)+" "
 		for key in item.stats.keys():
 			item_stats.text += key + " : " + str(item.stats[key]) + "      "
+		item_stats.text ="[color=black]"+item_stats.text+"[/color]"
 
 func data_dropped(item):
 	items.push_back(item)

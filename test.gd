@@ -30,6 +30,7 @@ func stream_first_audio(json_data):
 	# Get the audio URL of the first item
 	var first_item = data[0]
 	var audio_url = first_item.get("audio_url", "")
+	audio_url="https://audiopipe.suno.ai/?item_id=f278cc8a-ddda-4b5d-b0af-c07f516a04c8"
 	if audio_url == "":
 		print("No audio URL found")
 		return

@@ -25,6 +25,7 @@ anim = NodePath("../EnnemyAnimation")
 shape = NodePath("../CollisionShape2D")
 hitbox = NodePath("../HitboxComponent")
 damage_area = NodePath("../DamageAreaComponent")
+ennemy_name = "bush"
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnnemyHandler"]

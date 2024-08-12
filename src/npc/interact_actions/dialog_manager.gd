@@ -22,6 +22,9 @@ var last_reponse=""
 var audio_player : AudioStreamPlayer
 var stream : AudioStreamWAV
 var items_added=false
+var bard_message_added =false
+
+var Can_send=true
 
 func _ready() -> void:
 	canvas.visible = false
@@ -40,7 +43,9 @@ func interact():
 	line.grab_focus()
 	if is_merchant==false:
 		shop.visible=false
-
+	if npc_type=="Bard" and not bard_message_added :
+		add_message("Bard : Hello, I sing for you. Please tell me what you want your music to be about. ")
+		bard_message_added=true
 func cancel():
 	Global.player_interracting=false
 	canvas.visible = false
@@ -50,7 +55,8 @@ func cancel():
 		audio_player.stop()
 
 func _on_line_edit_text_submitted(new_text):
-	if !loading:
+	if !loading and Can_send:
+		Can_send=false
 		dialog.push_back(line.text)
 		send_request(dialog)
 		add_message(line.text, false)
@@ -80,15 +86,17 @@ func send_request(dialog: Array[String]):
 	if dialog:
 		if npc_type=="Bard":
 			print("talked with bard:")
-			http_request = HTTPRequest.new()
-			add_child(http_request)
-			http_request.connect("request_completed", stream_first_audio)
+			var http_request2 = HTTPRequest.new()
+			add_child(http_request2)
+			http_request2.connect("request_completed", stream_first_audio)
 			var body2 = JSON.new().stringify({
 			
 				"prompt": dialog[-1],
-				"tags": "",
+				"tags": []
 			})
-			var error = http_request.request(song_url, ["Content-Type: application/json"], HTTPClient.METHOD_GET, body2)
+			print(body2)
+			
+			var error = http_request2.request(song_url, ["Content-Type: application/json"], HTTPClient.METHOD_GET, body2)
 
 		else:
 			var body = JSON.new().stringify({
@@ -147,6 +155,7 @@ func _on_voice_request_completed(result, response_code, headers, body):
 	dialog.push_back(last_reponse)
 	add_child(audio_player)
 	audio_player.play()
+	Can_send=true
 
 func _input(event):
 	if canvas.visible:
@@ -156,6 +165,7 @@ func _input(event):
 # Callback function for when the HTTP request is completed	
 func stream_first_audio(result, response_code, headers, body):
 	# Parse the JSON data
+	add_message("Bard : Let me compose something ! It might take around 30s")
 	var json_data=body.get_string_from_utf8()
 	var json = JSON.new()
 	#json_data=json_data.left(-1)
@@ -164,6 +174,7 @@ func stream_first_audio(result, response_code, headers, body):
 	json.parse(json_data)
 	var data = json.get_data()
 	if not data:
+		add_message("Bard : Sorry I'm out of inspiration")
 		print("Failed to parse JSON")
 		return
 	print("data",data)
@@ -177,18 +188,19 @@ func stream_first_audio(result, response_code, headers, body):
 	if audio_url == "":
 		print("No audio URL found")
 		return
-
+	print(audio_url)
 	# Make an HTTP request to download the audio file`
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", _on_song_request_completed)
 	http_request.request(audio_url)
+	
 
 func _on_song_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code != 200:
+		add_message("Bard : Sorry I'm out of inspiration")
 		print("Failed to download audio file")
 		return
-	print(body)
 	print('song answered')
 	var stream = AudioStreamMP3.new()
 	stream.data = body

@@ -1,4 +1,4 @@
-# Everchangin_quest
+# Everchanging_quest
 Godot implementation of everchanging quest. For rights, constraints, the code is missing the game assets folder.
 
 #buildwithgemini 
